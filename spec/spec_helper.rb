@@ -6,6 +6,11 @@ require 'vcr'
 
 require 'active_support/inflector'
 require 'pry/test/helper'
+require 'simplecov'
+require 'simplecov-csv'
+SimpleCov.formatter = SimpleCov::Formatter::CSVFormatter
+SimpleCov.coverage_dir(ENV["COVERAGE_REPORTS"])
+SimpleCov.start
 
 RSpec.configure do |c|
   c.mock_with :mocha
